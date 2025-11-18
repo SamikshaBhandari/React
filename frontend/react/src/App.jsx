@@ -27,17 +27,20 @@ import { Home } from "./page/Home";
 import About from "./page/about";
 import Contact from "./page/Contact";
 import Navbar from "./page/Navbar";
+import SingleBlog from "./page/SingleBlog";
+import CreateBlog from "./page/CreateBlog";
 const App=()=>{
   return(
     <>
     <BrowserRouter>
+    <Navbar/>
     <Routes>
     <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/" element={<Navbar/>}/>
-
-
+            <Route path="/createblog"element={<CreateBlog/>}/>
+            <Route path="/SingleBlog/:id"element={<SingleBlog/>}/>
   </Routes>
 </BrowserRouter>
     </>
