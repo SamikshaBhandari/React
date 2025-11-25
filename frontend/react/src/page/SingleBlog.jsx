@@ -1,9 +1,10 @@
 import axios from 'axios'
 import React,{useEffect,useState} from 'react'
-import { Link, useParams } from 'react-router-dom'
-
+import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const SingleBlog=()=>{
+    const navigate=useNavigate()
     const {id}=useParams()
     const[data ,setData]=useState({})
     const getsingleblog=async()=>{
@@ -15,11 +16,16 @@ const SingleBlog=()=>{
     useEffect(()=>{
 getsingleblog()
     },[id])
+    const handleEdit=()=>{
+        navigate(`/editblog/${id}`)
+    }
     return(
         <div>
             <h1>{data.title}</h1>
             <h2>{data.subTitle}</h2>
             <p>{data.description}</p>
+    <button onClick={handleEdit}>Edit</button>
+    <button>Delete</button>
 
         </div>
     )
