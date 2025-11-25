@@ -29,6 +29,7 @@ import Contact from "./page/Contact";
 import Navbar from "./page/Navbar";
 import SingleBlog from "./page/SingleBlog";
 import CreateBlog from "./page/CreateBlog";
+import Editblog from "./page/Editblog";
 const App=()=>{
   return(
     <>
@@ -41,6 +42,8 @@ const App=()=>{
             <Route path="/" element={<Navbar/>}/>
             <Route path="/createblog"element={<CreateBlog/>}/>
             <Route path="/SingleBlog/:id"element={<SingleBlog/>}/>
+            <Route path="/Editblog/:id"element={<Editblog/>}/>
+
   </Routes>
 </BrowserRouter>
     </>
